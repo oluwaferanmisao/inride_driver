@@ -25,7 +25,7 @@ class PushNotificationScreen extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
                 child: Image.asset(
-                  "images/push_notification.png",
+                  "assets/images/push_notification.png",
                   fit: BoxFit.cover,
                 ),
               ),

@@ -30,7 +30,7 @@ dependencies:
   flutter_polyline_points: ^2.1.0
   location: ^7.0.1
   permission_handler: ^11.3.1
-  geolocator: ^13.0.2
+  geolocator: ^13.0.3
   flutter_lints: ^5.0.0
   riverpod_lint: ^2.6.3
   freezed: ^2.5.7

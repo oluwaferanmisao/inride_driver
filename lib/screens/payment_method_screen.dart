@@ -23,8 +23,7 @@ class PaymentMethodScreen extends StatelessWidget {
       ),
       body: SafeArea(
         child: Padding(
-          padding:
-              const EdgeInsets.only(left: 32, right: 32, top: 40, bottom: 24),
+          padding: const EdgeInsets.symmetric(horizontal: 32),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -68,19 +67,35 @@ class PaymentMethodScreen extends StatelessWidget {
               ),
               // Space.h(72),
               const Spacer(),
-              const Text(
-                "Don't worry, we don't store your payment information",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Color(0xff767676),
-                  fontSize: 18,
-                  fontWeight: FontWeight.w400,
-                ),
-              )
+              // const Text(
+              //   "Don't worry, we don't store your payment information",
+              //   textAlign: TextAlign.center,
+              //   style: TextStyle(
+              //     color: Color(0xff767676),
+              //     fontSize: 18,
+              //     fontWeight: FontWeight.w400,
+              //   ),
+              // ),
             ],
           ),
         ),
       ),
+      persistentFooterButtons: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 32),
+          child: Center(
+            child: Text(
+              'Don\'t worry, we don\'t store your payment information',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Color(0xff767676),
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

@@ -24,7 +24,7 @@ class EnableLocationScreen extends StatelessWidget {
               height: 240,
               padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
               child: Image.asset(
-                "images/location.png",
+                "assets/images/location.png",
                 fit: BoxFit.cover,
               ),
             ),

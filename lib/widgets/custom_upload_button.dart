@@ -24,8 +24,8 @@ class CustomUploadButton extends StatelessWidget {
         color: Palette.accentTextColor,
         strokeWidth: 2,
         child: SizedBox(
-          width: 112,
-          height: 82,
+          width: MediaQuery.of(context).size.width * 0.25,
+          height: MediaQuery.of(context).size.height * 0.1,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
