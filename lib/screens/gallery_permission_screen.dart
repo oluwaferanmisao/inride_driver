@@ -38,7 +38,7 @@ class GalleryPermissionScreen extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
                 child: Image.asset(
-                  "images/gallery.png",
+                  "assets/images/gallery.png",
                   fit: BoxFit.cover,
                 ),
               ),

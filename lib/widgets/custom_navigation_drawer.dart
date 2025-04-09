@@ -14,12 +14,13 @@ class CustomNavDrawerWithNotch extends StatelessWidget {
     final deviceHeight = MediaQuery.of(context).size.height;
 
     return Drawer(
+      
       backgroundColor: Colors.transparent,
       width: double.infinity,
       child: Row(
         children: [
           Container(
-            width: deviceWidth * 0.70,
+            width: deviceWidth * 0.65,
             height: deviceHeight,
             color: Colors.white,
             child: Column(

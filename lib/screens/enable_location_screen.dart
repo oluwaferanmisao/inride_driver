@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inride_driver/screens/payment_method_screen.dart';
 import 'package:inride_driver/theme/theme_barrel.dart';
 import 'package:inride_driver/widgets/widgets_barrel.dart';
@@ -15,14 +16,14 @@ class EnableLocationScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32),
+        padding: EdgeInsets.symmetric(horizontal: 32.w),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: double.infinity,
-              height: 240,
-              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+              width: double.infinity.w,
+              height: 240.h,
+              padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 30.h),
               child: Image.asset(
                 "assets/images/location.png",
                 fit: BoxFit.cover,
@@ -31,24 +32,18 @@ class EnableLocationScreen extends StatelessWidget {
             Space.h(30),
             Column(
               children: [
-                const Text(
+                Text(
                   "Enable location",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xff191B23),
-                    fontSize: 22,
-                    fontWeight: FontWeight.w800,
-                  ),
+                  style: AppTheme.displaySmallMedium
+                      .copyWith(fontSize: 22, fontWeight: FontWeight.w800),
                 ),
                 Space.h(10),
-                const Text(
+                Text(
                   "To enable location, show we will know your location.",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xff767676),
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: AppTheme.textLargeRegular
+                      .copyWith(fontSize: 18, fontWeight: FontWeight.w500),
                 ),
               ],
             ),

@@ -11,24 +11,20 @@ class CustomDriverSignup extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        Text(
           "Driver's License",
-          style: TextStyle(
-              fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black),
+          style: AppTheme.textMediumRegular,
         ),
         Space.h(16),
         const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CustomUploadButton(
-              icon: Icons.camera_alt_rounded,
-              label: "Front",
-            ),
+            CustomUploadButton(icon: Icons.camera_alt_rounded, label: "Front"),
             CustomUploadButton(icon: Icons.camera_alt_rounded, label: "Back"),
             CustomUploadButton(
-                icon: Icons.face_6_rounded, label: "Face verification")
+                icon: Icons.face_6_rounded, label: "Selfie for verification"),
           ],
-        )
+        ),
       ],
     );
   }

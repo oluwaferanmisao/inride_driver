@@ -9,7 +9,7 @@ import 'features/features_barrel.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  PermissionService().requestPermissions;
+  await PermissionService().requestPermissions();
 
   runApp(const ProviderScope(child: MyApp()));
 }
@@ -23,7 +23,7 @@ class MyApp extends ConsumerWidget {
     return ListenableBuilder(
       listenable: SettingsModel(),
       builder: (context, child) => ScreenUtilInit(
-        designSize: const Size(932, 430),
+        designSize: const Size(430, 932),
         minTextAdapt: true,
         builder: (context, child) => MaterialApp.router(
           routerConfig: appRouter,

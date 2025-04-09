@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inride_driver/widgets/widgets_barrel.dart';
 import 'package:inride_driver/theme/theme_barrel.dart';
 
@@ -11,25 +13,31 @@ class SigninScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
         leading: IconButton(
           onPressed: () {},
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            size: 24,
-          ),
+          icon: Icon(Icons.arrow_back_ios, size: 24.h),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32),
-        child: Column(
-          children: [
-            const CustomOnboardingHeader(),
-            Space.h(8),
-            const CustomSignInForm(),
-            Space.h(46),
-            const CustomAltSignInOptions(),
-          ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding:
+              EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const CustomOnboardingHeader(),
+                Space.h(8),
+                const CustomSignInForm(),
+                Space.h(46),
+                const CustomAltSignInOptions(),
+              ],
+            ),
+          ),
         ),
       ),
     );

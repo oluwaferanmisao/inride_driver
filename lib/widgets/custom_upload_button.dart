@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inride_driver/theme/theme_barrel.dart';
 import 'package:dotted_border/dotted_border.dart';
 
@@ -19,28 +20,30 @@ class CustomUploadButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DottedBorder(
+        borderPadding: EdgeInsets.all(5),
         borderType: BorderType.RRect,
-        radius: const Radius.circular(8),
+        radius: Radius.circular(MediaQuery.of(context).size.width * .02),
         color: Palette.accentTextColor,
-        strokeWidth: 2,
+        strokeWidth: 1,
         child: SizedBox(
-          width: MediaQuery.of(context).size.width * 0.25,
-          height: MediaQuery.of(context).size.height * 0.1,
+          width: 112.66.w,
+          height: 82.h,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Icon(
                 icon,
                 color: Palette.accentTextColor,
+                size: 25.h,
               ),
-              Space.h(8),
+              // SizedBox(height: MediaQuery.of(context).size.height * .01),
               Text(
                 label,
+                softWrap: true,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black,
+                style: AppTheme.textSmallRegular.copyWith(
+                  letterSpacing: 0,
                 ),
               ),
             ],

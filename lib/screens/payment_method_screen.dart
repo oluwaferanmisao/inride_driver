@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inride_driver/screens/screens_barrel.dart';
 import 'package:inride_driver/theme/theme_barrel.dart';
 import 'package:go_router/go_router.dart';
@@ -15,34 +16,27 @@ class PaymentMethodScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {},
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back_ios,
-            size: 24,
+            size: 24.h,
           ),
         ),
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32),
+          padding: EdgeInsets.symmetric(horizontal: 32.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+              Text(
                 "How would you like to be paid",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 22,
-                  fontWeight: FontWeight.w700,
-                ),
+                softWrap: true,
+                style: AppTheme.displaySmallBold.copyWith(fontSize: 22.sp),
               ),
               Space.h(10),
-              const Text(
+              Text(
                 "The amount will be deposited to your account once the trip is completed.",
-                style: TextStyle(
-                  color: Color(0xff767676),
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: AppTheme.textLargeRegular.copyWith(fontSize: 18.sp),
               ),
               Space.h(24),
               CustomChoiceListTile(
@@ -52,50 +46,37 @@ class PaymentMethodScreen extends StatelessWidget {
                 onTap: () => context.goNamed(VehicleChoiceScreen.routeName),
               ),
               Space.h(16),
-              const CustomChoiceListTile(
+              CustomChoiceListTile(
                 leading: Icons.attach_money_rounded,
                 title: "Bank Transfers",
                 subtitle:
                     "Transfer funds electronically between bank accounts.",
+                onTap: () => context.goNamed(VehicleChoiceScreen.routeName),
               ),
               Space.h(16),
-              const CustomChoiceListTile(
+              CustomChoiceListTile(
                 leading: Icons.wallet_rounded,
                 title: "Mobile Wallet",
                 subtitle:
                     "Digital wallets linked to credit cards, debit cards, or bank accounts.",
+                onTap: () => context.goNamed(VehicleChoiceScreen.routeName),
               ),
-              // Space.h(72),
-              const Spacer(),
-              // const Text(
-              //   "Don't worry, we don't store your payment information",
-              //   textAlign: TextAlign.center,
-              //   style: TextStyle(
-              //     color: Color(0xff767676),
-              //     fontSize: 18,
-              //     fontWeight: FontWeight.w400,
-              //   ),
-              // ),
+              Space.h(71),
+              Center(
+                child: Text(
+                  "Don't worry, we don't store your payment information",
+                  textAlign: TextAlign.center,
+                  style: AppTheme.textSmallRegular
+                    ..copyWith(
+                      color: Color(0xff767676),
+                      fontSize: 18,
+                    ),
+                ),
+              ),
             ],
           ),
         ),
       ),
-      persistentFooterButtons: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32),
-          child: Center(
-            child: Text(
-              'Don\'t worry, we don\'t store your payment information',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color(0xff767676),
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ),
-        ),
-      ],
     );
   }
 }
@@ -124,10 +105,11 @@ class CustomChoiceListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+      width: 382.w,
+      height: 92.h,
+      padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 12.w),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(12.r),
         color: Colors.white,
         boxShadow: [
           BoxShadow(
@@ -142,28 +124,20 @@ class CustomChoiceListTile extends StatelessWidget {
         onTap: onTap,
         leading: Icon(
           leading,
-          size: 30,
+          size: 30.w,
           color: Palette.accentTextColor,
         ),
         title: Text(
           title,
-          style: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w700,
-            color: Color(0xff202020),
-          ),
+          style: AppTheme.textSmallBold,
         ),
         subtitle: Text(
           subtitle,
-          style: const TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w400,
-            color: Color(0xff515152),
-          ),
+          style: AppTheme.textSmallRegular,
         ),
-        trailing: const Icon(
+        trailing: Icon(
           Icons.arrow_forward_ios_rounded,
-          size: 24,
+          size: 24.w,
           color: Color(0xff1d1d1d),
         ),
       ),

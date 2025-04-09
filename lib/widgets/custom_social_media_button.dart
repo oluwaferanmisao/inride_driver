@@ -13,20 +13,22 @@ class CustomSocialMediaButton extends StatelessWidget {
   final String path;
 
   //This will be the function of the button
-  final Function? function;
+  final VoidCallback? function;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 70,
-      height: 70,
+      width: MediaQuery.of(context).size.width * .20,
+      height: MediaQuery.of(context).size.width * .20,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         border: Border.all(
-            color: Palette.accentTextColor.withOpacity(0.1), width: 2),
-        borderRadius: const BorderRadius.all(Radius.circular(10)),
+            color: Palette.accentTextColor.withValues(alpha: 0.1), width: 2),
+        borderRadius: BorderRadius.all(Radius.circular(
+          MediaQuery.of(context).size.width * .05,
+        )), // Incase this breaks, remove MediaQuery.of(context).size.width * .02, and put 10
       ),
-      child: TextButton(onPressed: () {}, child: Image.asset(path)),
+      child: TextButton(onPressed: function, child: Image.asset(path)),
     );
   }
 }

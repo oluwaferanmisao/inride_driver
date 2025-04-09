@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inride_driver/screens/enable_location_screen.dart';
 import 'package:inride_driver/theme/theme_barrel.dart';
 import 'package:inride_driver/widgets/widgets_barrel.dart';
@@ -15,15 +16,14 @@ class PushNotificationScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32),
+          padding: EdgeInsets.symmetric(horizontal: 32.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: double.infinity,
-                height: 240,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+                width: double.infinity.w,
+                height: 240.h,
+                padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 30.h),
                 child: Image.asset(
                   "assets/images/push_notification.png",
                   fit: BoxFit.cover,
@@ -32,24 +32,17 @@ class PushNotificationScreen extends StatelessWidget {
               Space.h(30),
               Column(
                 children: [
-                  const Text(
+                  Text(
                     "Get real-time updates by activating Push notifications",
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color(0xff191B23),
-                      fontSize: 22,
-                      fontWeight: FontWeight.w800,
-                    ),
+                    style: AppTheme.displayMediumBold
+                        .copyWith(fontSize: 22.sp, fontWeight: FontWeight.w800),
                   ),
                   Space.h(10),
-                  const Text(
+                  Text(
                     "Receive notifications about ride requests, passenger details, and important alerts.",
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color(0xff767676),
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    style: AppTheme.textMediumRegular.copyWith(fontSize: 18.sp),
                   ),
                 ],
               ),
@@ -64,13 +57,12 @@ class PushNotificationScreen extends StatelessWidget {
                   Space.h(8),
                   TextButton(
                     onPressed: () {},
-                    child: const Text(
+                    child: Text(
                       "Skip",
-                      style: TextStyle(
-                        color: Color(
-                            0xff030303), //ToDo: Make this a univrsal style
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
+                      style: AppTheme.textMediumRegular.copyWith(
+                        fontFamily: 'Poppins',
+                        fontSize: 17.sp,
+                        color: Palette.blackText,
                       ),
                     ),
                   ),

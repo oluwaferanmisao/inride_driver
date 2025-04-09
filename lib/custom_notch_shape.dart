@@ -21,7 +21,7 @@ class NotchPainter extends CustomPainter {
     path_0.close();
 
     Paint paint0Fill = Paint()..style = PaintingStyle.fill;
-    paint0Fill.color = const Color(0xffffffff).withOpacity(1.0);
+    paint0Fill.color = const Color(0xffffffff).withValues(alpha: 1.0);
     canvas.drawPath(path_0, paint0Fill);
   }
 

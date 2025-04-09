@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 //This widget displays a list tile with a radio that allows single selection among a list of CustomChoiceWithRadio
 class CustomChoiceWithRadio extends StatelessWidget {
@@ -7,7 +8,7 @@ class CustomChoiceWithRadio extends StatelessWidget {
     required this.label,
     required this.value,
     required this.groupValue,
-    this.function,
+    required this.function,
   });
 
   //The label of the choice tile
@@ -20,15 +21,15 @@ class CustomChoiceWithRadio extends StatelessWidget {
   final int groupValue;
 
   //The function that confirms a selection from the list
-  final Function? function;
+  final Function(int)? function;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+      width: double.infinity.w,
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r),
           color: groupValue == value
               ? const Color(0xffd3e2fa)
               : const Color(0xfff7f7f9),
@@ -42,13 +43,19 @@ class CustomChoiceWithRadio extends StatelessWidget {
         children: [
           Text(
             label,
-            style: const TextStyle(
-                color: Colors.black, fontSize: 20, fontWeight: FontWeight.w700),
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 20.sp,
+                fontWeight: FontWeight.w700),
           ),
           Radio(
             value: value,
             groupValue: groupValue,
-            onChanged: (value) {},
+            onChanged: (newValue) {
+              if (function != null && newValue != null) {
+                function!(newValue);
+              }
+            },
             activeColor: const Color(0xff4285f4),
           ),
         ],

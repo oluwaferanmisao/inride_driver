@@ -1,18 +1,20 @@
 import 'package:permission_handler/permission_handler.dart';
 
 class PermissionService {
-  void requestPermissions() async {
+  Future<void> requestPermissions() async {
     try {
-      bool locationService = await Permission.locationWhenInUse.isDenied;
-      bool cameraService = await Permission.camera.isDenied;
-      bool galleryService = await Permission.mediaLibrary.isDenied;
-      if (locationService) {
+      PermissionStatus locationService =
+          await Permission.locationWhenInUse.status;
+      PermissionStatus cameraService = await Permission.camera.status;
+      PermissionStatus galleryService = await Permission.mediaLibrary.status;
+
+      if (locationService.isDenied || locationService.isPermanentlyDenied) {
         Permission.locationWhenInUse.request();
       }
-      if (cameraService) {
+      if (cameraService.isDenied || cameraService.isPermanentlyDenied) {
         Permission.camera.request();
       }
-      if (galleryService) {
+      if (galleryService.isDenied || galleryService.isPermanentlyDenied) {
         Permission.mediaLibrary.request();
       }
     } catch (e) {

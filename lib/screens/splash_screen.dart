@@ -7,8 +7,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:inride_driver/models/location_provider.dart';
 import 'package:inride_driver/navigation/nav_barrel.dart';
 import 'package:inride_driver/screens/screens_barrel.dart';
-import 'package:inride_driver/theme/color_palette.dart';
 import 'package:go_router/go_router.dart';
+import 'package:inride_driver/theme/theme_barrel.dart';
 
 //This is the sample splash screen that appears when the user opens the app
 class SplashScreen extends ConsumerStatefulWidget {
@@ -37,12 +37,12 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
         Tween<Offset>(begin: const Offset(0.0, 1.0), end: Offset.zero).animate(
             CurvedAnimation(parent: _slideController, curve: Curves.easeIn));
 
-    _slideController.addStatusListener((state) {
-      print("$state");
-      if (state == AnimationStatus.forward) {
-        print("Animation started");
-      }
-    });
+    // _slideController.addStatusListener((state) {
+    //   print("$state");
+    //   if (state == AnimationStatus.forward) {
+    //     print("Animation started");
+    //   }
+    // });
   }
 
   @override
@@ -62,43 +62,55 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
         context.goNamed(HomeScreen.routeName);
       }
       if (!UserAuth.isLoggedIn) {
-        context.goNamed(SignupScreen.routeName);
+        context.goNamed(SigninScreen.routeName);
       }
     });
 
     return Scaffold(
       backgroundColor: Palette.backgroundColor,
-      body: SlideTransition(
-        position: _slideAnimation,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 120,
-                height: 120,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(34),
-                  color: Colors.white,
-                ),
-              ),
-              const Text(
-                "InRide",
-                style: TextStyle(
-                  fontSize: 70,
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
-              const Text(
-                "Driver",
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.w400,
-                ),
-              )
-            ],
+      body: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          Positioned(
+            child: Image.asset(
+              width: double.infinity,
+              height: 240,
+              "assets/images/houses_vector.png",
+            ),
           ),
-        ),
+          SlideTransition(
+            position: _slideAnimation,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 120,
+                    height: 120,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(34),
+                      color: Colors.white,
+                    ),
+                  ),
+                  const Text(
+                    "InRide",
+                    style: TextStyle(
+                      fontSize: 70,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                  const Text(
+                    "Driver",
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

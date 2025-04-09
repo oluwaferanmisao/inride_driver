@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:inride_driver/screens/screens_barrel.dart';
 import 'package:inride_driver/widgets/widgets_barrel.dart';
 import 'package:inride_driver/theme/theme_barrel.dart';
 
@@ -33,11 +35,11 @@ class CustomAltSignInOptions extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const CustomSocialMediaButton(path: "images/google.png"),
+            const CustomSocialMediaButton(path: "assets/images/google.png"),
             Space.w(40),
-            const CustomSocialMediaButton(path: "images/facebook.png"),
+            const CustomSocialMediaButton(path: "assets/images/facebook.png"),
             Space.w(40),
-            const CustomSocialMediaButton(path: "images/twitter.png"),
+            const CustomSocialMediaButton(path: "assets/images/twitter.png"),
           ],
         ),
         Space.h(10),
@@ -45,13 +47,16 @@ class CustomAltSignInOptions extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              "Haven't signed up yet?",
+              "Haven't signed up yet? ",
               style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w400,
                   color: Palette.textColor3),
             ),
             GestureDetector(
+              onTap: () {
+                context.goNamed(SignupScreen.routeName);
+              },
               child: const Text(
                 "Signup",
                 style: TextStyle(

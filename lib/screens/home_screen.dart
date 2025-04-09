@@ -9,7 +9,6 @@ import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:inride_driver/constants.dart';
 
-
 //This is the screen showing the map and the driver's status
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -56,8 +55,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   void initializeMap() async {
     //For this test, I'll use a custom destination
     final coordinates = await fetchPolylinePoints(
-        LatLng(6.464266, 3.304599), LatLng(6.424065400066083, 3.464580895494483),
-        );
+      LatLng(6.464266, 3.304599),
+      LatLng(6.424065400066083, 3.464580895494483),
+    );
     generatePolylineFromPoints(coordinates);
   }
 
@@ -75,13 +75,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final polylinePoints = PolylinePoints();
 
     final result = await polylinePoints.getRouteBetweenCoordinates(
-        request: PolylineRequest(
-            origin: PointLatLng(
-                initialLocation.latitude, initialLocation.longitude),
-            destination: PointLatLng(
-                destinationLocation.latitude, destinationLocation.longitude),
-            mode: TravelMode.driving),
-        googleApiKey: kGoogleMapsApi);
+      request: PolylineRequest(
+          origin:
+              PointLatLng(initialLocation.latitude, initialLocation.longitude),
+          destination: PointLatLng(
+              destinationLocation.latitude, destinationLocation.longitude),
+          mode: TravelMode.driving),
+      googleApiKey: kGoogleMapsApi,
+    );
 
     if (result.points.isNotEmpty) {
       return result.points
@@ -196,21 +197,22 @@ class RideAcceptanceSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomPersistentBottomSheet(
-        title: "You're Online",
-        body: Column(
-          children: [
-            const Text("data"),
-            SizedBox(
-              child: const Column(),
-            ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CustomOutlinedButton(label: "Accept"),
-                CustomFilledButton(label: "Decline"),
-              ],
-            )
-          ],
-        ),);
+      title: "You're Online",
+      body: Column(
+        children: [
+          const Text("data"),
+          SizedBox(
+            child: const Column(),
+          ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CustomOutlinedButton(label: "Accept"),
+              CustomFilledButton(label: "Decline"),
+            ],
+          )
+        ],
+      ),
+    );
   }
 }

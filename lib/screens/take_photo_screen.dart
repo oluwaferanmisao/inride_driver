@@ -36,7 +36,7 @@ class TakePhotoScreen extends StatelessWidget {
                   width: 306,
                   height: 306,
                   child: Image.asset(
-                    "images/profile_pic.png",
+                    "assets/images/profile_pic.png",
                     fit: BoxFit.cover,
                   ),
                 ),

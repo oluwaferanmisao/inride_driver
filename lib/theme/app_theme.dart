@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'color_palette.dart';
-import "package:google_fonts/google_fonts.dart";
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTheme {
   static ThemeData themeData = ThemeData(
-    fontFamily: 'inter',
+    fontFamily: 'Inter',
     textTheme: TextTheme(
       displayLarge: displayLargeBold,
       displayMedium: displayLargeMedium,
@@ -32,85 +31,98 @@ class AppTheme {
     ),
   );
 
-  static TextStyle displayLargeBold = GoogleFonts.inter(
-    fontSize: 40,
+  static TextStyle displayLargeBold = TextStyle(
+    fontFamily: "Inter",
+    fontSize: 40.sp,
     fontWeight: FontWeight.bold,
     height: 1.5,
-    color: Palette.textColor,
+    color: Palette.regularTextColor,
   );
-  static TextStyle displayLargeMedium = GoogleFonts.inter(
-    fontSize: 32,
+  static TextStyle displayLargeMedium = TextStyle(
+    fontFamily: "Inter",
+    fontSize: 32.sp,
     fontWeight: FontWeight.w500,
     height: 1.18,
-    color: Palette.textColor,
+    color: Palette.regularTextColor,
   );
-  static TextStyle displayMediumBold = GoogleFonts.inter(
-    fontSize: 24,
+  static TextStyle displayMediumBold = TextStyle(
+    fontFamily: "Inter",
+    fontSize: 24.sp,
     fontWeight: FontWeight.w700,
     height: 1.38,
-    color: Palette.textColor,
+    color: Palette.regularTextColor,
   );
 
-  static TextStyle displaySmallBold = GoogleFonts.inter(
-    fontSize: 20,
+  static TextStyle displaySmallBold = TextStyle(
+    fontFamily: "Inter",
+    fontSize: 20.sp,
     fontWeight: FontWeight.w700,
     height: 1.5,
-    color: Palette.textColor,
+    color: Palette.regularTextColor,
   );
-  static TextStyle displayPSmallBold = GoogleFonts.poppins(
-    fontSize: 20,
+  static TextStyle displayPSmallBold = TextStyle(
+    fontFamily: "Poppins",
+    fontSize: 20.sp,
     fontWeight: FontWeight.w700,
     height: 1.5,
-    color: Palette.textColor,
+    color: Palette.regularTextColor,
   );
-  static TextStyle displaySmallMedium = GoogleFonts.inter(
-    fontSize: 20,
+  static TextStyle displaySmallMedium = TextStyle(
+    fontFamily: "Inter",
+    fontSize: 20.sp,
     fontWeight: FontWeight.w500,
     height: 1.5,
-    color: Palette.textColor,
+    color: Palette.regularTextColor,
   );
-  static TextStyle textLargeBold = GoogleFonts.inter(
-    fontSize: 20,
+  static TextStyle textLargeBold = TextStyle(
+    fontFamily: "Inter",
+    fontSize: 20.sp,
     fontWeight: FontWeight.bold,
     height: 1.5,
-    color: Palette.textColor,
+    color: Palette.regularTextColor,
   );
 
-  static TextStyle textLargeRegular = GoogleFonts.inter(
-    fontSize: 20,
+  static TextStyle textLargeRegular = TextStyle(
+    fontFamily: "Inter",
+    fontSize: 20.sp,
     fontWeight: FontWeight.w400,
     height: 1.5,
-    color: Palette.textColor,
+    color: Palette.regularTextColor,
   );
-  static TextStyle textMediumBold = GoogleFonts.inter(
-    fontSize: 16,
+  static TextStyle textMediumBold = TextStyle(
+    fontFamily: "Inter",
+    fontSize: 16.sp,
     fontWeight: FontWeight.w700,
     height: 1.38,
-    color: Palette.textColor,
+    color: Palette.regularTextColor,
   );
 
-  static TextStyle textMediumRegular = GoogleFonts.inter(
-    fontSize: 16,
+  static TextStyle textMediumRegular = TextStyle(
+    fontFamily: "Inter",
+    fontSize: 16.sp,
     fontWeight: FontWeight.w500,
     height: 1.38,
-    color: Palette.textColor,
+    color: Palette.regularTextColor,
   );
-  static TextStyle textSmallBold = GoogleFonts.inter(
-    fontSize: 14,
+  static TextStyle textSmallBold = TextStyle(
+    fontFamily: "Inter",
+    fontSize: 14.sp,
     fontWeight: FontWeight.w700,
     height: 1.36,
-    color: Palette.textColor,
+    color: Palette.regularTextColor,
   );
-  static TextStyle textSmallMedium = GoogleFonts.inter(
-    fontSize: 14,
+  static TextStyle textSmallMedium = TextStyle(
+    fontFamily: "Inter",
+    fontSize: 14.sp,
     fontWeight: FontWeight.w500,
     height: 1.36,
-    color: Palette.textColor,
+    color: Palette.regularTextColor,
   );
-  static TextStyle textSmallRegular = GoogleFonts.inter(
-    fontSize: 12,
+  static TextStyle textSmallRegular = TextStyle(
+    fontFamily: "Inter",
+    fontSize: 12.sp,
     fontWeight: FontWeight.w400,
     height: 1.36,
-    color: Palette.textColor,
+    color: Palette.regularTextColor,
   );
 }
