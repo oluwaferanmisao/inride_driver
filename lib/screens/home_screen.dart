@@ -1,6 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inride_driver/models/location_provider.dart';
 import 'package:inride_driver/theme/theme_barrel.dart';
 import 'package:inride_driver/widgets/widgets_barrel.dart';
@@ -129,9 +130,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               ),
             ),
             Positioned(
-                top: 16,
-                left: 32,
-                right: 32,
+                top: 61.h,
+                left: 32.w,
+                right: 32.w,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
